@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: user-management-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: user-management
+
+  template:
+    metadata:
+      labels:
+        app: user-management
+
+    spec:
+      containers:
+      - name: user-management
+        image: nginx:latest
+
+        ports:
+        - containerPort: 80
