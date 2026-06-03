@@ -16,3 +16,13 @@ resource "aws_dynamodb_table" "users" {
     type = "S"
   }
 }
+
+output "bucket_name" {
+  description = "S3 Bucket Name"
+  value       = aws_s3_bucket.project_bucket.bucket
+}
+
+output "dynamodb_table_name" {
+  description = "DynamoDB Table Name"
+  value       = aws_dynamodb_table.users.name
+}
